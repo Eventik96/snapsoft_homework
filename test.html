@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="refresh" content="1">-->
+    <style>
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script src="./getWritableFolderStructure.js">
+    </script>
+    <script src="./TreeItem.js"></script>
+    <script src="./displayRecursive.js"></script>
+    <script>
+        function test() {
+            var writeableFolders = ["/root/dist", "/root/bin/exe/g", "/root/bin/apk", "/root/src/js", "/root/src/cpp"];
+            var readableFolders = ["/root/src", "/root/bin/"];
+            const tree = getWritableFolderStructure(readableFolders, writeableFolders);
+            const root = document.getElementById("root");
+            displayRecursive(tree, root);
+        }
+    </script>
+</head>
+
+<body onload="test()">
+    <div id="root"></div>
+</body>
+
+</html>
